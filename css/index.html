@@ -1,9 +1,275 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>CSS3 Practice</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>CSS Skills Demo</title>
+    <link rel="stylesheet" href="app.css" />
   </head>
-  <body></body>
+  <body>
+    <main>
+      <header>
+        <a class="brand" href="#" aria-label="Brand">
+          <div class="logo">CSS</div>
+          <div>
+            <div style="font-weight: 700">CSS3 Lab</div>
+            <div style="font-size: 0.85rem; color: var(--muted)">
+              Practice playground
+            </div>
+          </div>
+        </a>
+
+        <nav>
+          <a href="#features">Features</a>
+          <a href="#pricing">Pricing</a>
+          <a href="#form">Contact</a>
+
+          <div
+            class="toggle"
+            id="themeToggle"
+            data-on="false"
+            title="Toggle theme"
+            role="switch"
+            aria-checked="false"
+          >
+            <input type="checkbox" id="themeChk" aria-label="Toggle theme" />
+            <div class="knob" aria-hidden="true"></div>
+          </div>
+        </nav>
+      </header>
+
+      <section class="hero">
+        <div class="card hero-main">
+          <h1>Practice modern CSS: Grid, Flexbox, Animations & more</h1>
+          <div class="muted">
+            A small playground that demonstrates many CSS techniques. Resize the
+            window and toggle the theme.
+          </div>
+          <a class="cta" href="#features">Start Practicing →</a>
+
+          <div
+            style="
+              display: flex;
+              gap: 0.6rem;
+              margin-top: 1rem;
+              flex-wrap: wrap;
+            "
+          >
+            <div
+              class="badge"
+              style="
+                background: rgba(255, 255, 255, 0.03);
+                padding: 0.4rem 0.6rem;
+                border-radius: 999px;
+                color: var(--muted);
+              "
+            >
+              variables
+            </div>
+            <div
+              class="badge"
+              style="
+                background: rgba(255, 255, 255, 0.03);
+                padding: 0.4rem 0.6rem;
+                border-radius: 999px;
+                color: var(--muted);
+              "
+            >
+              grid
+            </div>
+            <div
+              class="badge"
+              style="
+                background: rgba(255, 255, 255, 0.03);
+                padding: 0.4rem 0.6rem;
+                border-radius: 999px;
+                color: var(--muted);
+              "
+            >
+              animations
+            </div>
+          </div>
+        </div>
+
+        <aside class="card live">
+          <div class="shape float" aria-hidden="true"></div>
+          <div
+            style="
+              position: absolute;
+              bottom: 12px;
+              left: 12px;
+              color: rgba(2, 6, 23, 0.7);
+              font-weight: 700;
+            "
+          >
+            Live Preview
+          </div>
+        </aside>
+      </section>
+
+      <section id="features" class="grid">
+        <div class="feature card">
+          <h3>Responsive Grid</h3>
+          <p class="muted">
+            Practice column spans, media queries and ordering.
+          </p>
+          <div style="margin-top: 0.8rem">
+            <span class="badge">grid-template</span>
+          </div>
+        </div>
+
+        <div class="feature card">
+          <h3>Hover & Transform</h3>
+          <p class="muted">
+            Transitions, transform, and box-shadow for interactive UI.
+          </p>
+          <div style="margin-top: 0.8rem">
+            <span class="badge">transition</span>
+          </div>
+        </div>
+
+        <div class="feature card">
+          <h3>Pseudo Elements</h3>
+          <p class="muted">
+            Experiment with ::before and ::after for decorative shapes.
+          </p>
+          <div style="margin-top: 0.8rem">
+            <span class="badge">::before</span>
+          </div>
+        </div>
+      </section>
+
+      <section id="pricing" class="pricing">
+        <div class="plan card">
+          <div class="muted-small">Starter</div>
+          <div class="price">
+            $9<span style="font-size: 0.8rem; color: var(--muted)">/mo</span>
+          </div>
+          <div
+            class="meter"
+            aria-hidden="true"
+            style="margin-top: 0.5rem"
+          ></div>
+        </div>
+
+        <div class="plan highlight card">
+          <div class="muted-small">Pro</div>
+          <div class="price">
+            $29<span style="font-size: 0.8rem; color: var(--muted)">/mo</span>
+          </div>
+          <div
+            class="meter"
+            style="background: linear-gradient(90deg, #fbbf24, #f97316)"
+          ></div>
+        </div>
+
+        <div class="plan card">
+          <div class="muted-small">Enterprise</div>
+          <div class="price">Custom</div>
+          <div
+            class="meter"
+            style="background: linear-gradient(90deg, #ef4444, #ec4899)"
+          ></div>
+        </div>
+      </section>
+
+      <section class="card">
+        <h3>Contact / Sign up</h3>
+        <form id="form" aria-label="Test form">
+          <div class="row">
+            <input type="text" placeholder="First name" required />
+            <input type="text" placeholder="Last name" />
+          </div>
+          <input type="email" placeholder="Email" required />
+          <select>
+            <option>Interested in...</option>
+            <option>Grid</option>
+            <option>Flexbox</option>
+            <option>Animations</option>
+          </select>
+          <textarea rows="4" placeholder="Message"></textarea>
+          <div
+            style="
+              display: flex;
+              gap: 0.6rem;
+              align-items: center;
+              margin-top: 0.4rem;
+            "
+          >
+            <button class="cta" type="submit">Send message</button>
+            <button
+              type="button"
+              style="
+                background: transparent;
+                border: 1px solid rgba(255, 255, 255, 0.06);
+                padding: 0.5rem 0.8rem;
+                border-radius: 10px;
+                color: var(--muted);
+              "
+            >
+              Reset
+            </button>
+          </div>
+        </form>
+      </section>
+
+      <section class="card" aria-hidden="false">
+        <h3>Gallery (Grid practice)</h3>
+        <div class="gallery" role="list">
+          <div class="g1">A</div>
+          <div class="g2">B</div>
+          <div class="g3">C</div>
+          <div style="background: linear-gradient(135deg, #f47174, #ffb86b)">
+            D
+          </div>
+          <div style="background: linear-gradient(135deg, #9be15d, #00e3ae)">
+            E
+          </div>
+          <div style="background: linear-gradient(135deg, #60a5fa, #a78bfa)">
+            F
+          </div>
+        </div>
+      </section>
+
+      <footer>
+        Try changing viewport size, tab through elements, hover, focus inputs,
+        and toggle theme.
+      </footer>
+    </main>
+
+    <script>
+      // Small script only to toggle theme attribute (no frameworks).
+      const chk = document.getElementById('themeChk');
+      const root = document.documentElement;
+      const toggle = document.getElementById('themeToggle');
+
+      // initialize from prefers-color-scheme
+      const prefersDark =
+        window.matchMedia &&
+        window.matchMedia('(prefers-color-scheme: dark)').matches;
+      if (prefersDark) {
+        root.setAttribute('data-theme', '');
+        toggle.setAttribute('data-on', 'false');
+      } else {
+        root.setAttribute('data-theme', 'light');
+        toggle.setAttribute('data-on', 'true');
+        chk.checked = true;
+      }
+
+      toggle.addEventListener('click', () => {
+        const on = toggle.getAttribute('data-on') === 'true';
+        toggle.setAttribute('data-on', String(!on));
+        toggle.setAttribute('aria-checked', String(!on));
+        chk.checked = !on;
+        if (!on) root.setAttribute('data-theme', 'light');
+        else root.removeAttribute('data-theme');
+      });
+
+      // tiny form demo to show focus and :invalid styles in action
+      document.querySelector('form').addEventListener('submit', (e) => {
+        e.preventDefault();
+        alert('Form submitted (demo) — try styling :valid / :invalid in CSS!');
+      });
+    </script>
+  </body>
 </html>
