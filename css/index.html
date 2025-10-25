@@ -238,12 +238,10 @@
     </main>
 
     <script>
-      // Small script only to toggle theme attribute (no frameworks).
       const chk = document.getElementById('themeChk');
       const root = document.documentElement;
       const toggle = document.getElementById('themeToggle');
 
-      // initialize from prefers-color-scheme
       const prefersDark =
         window.matchMedia &&
         window.matchMedia('(prefers-color-scheme: dark)').matches;
@@ -265,7 +263,6 @@
         else root.removeAttribute('data-theme');
       });
 
-      // tiny form demo to show focus and :invalid styles in action
       document.querySelector('form').addEventListener('submit', (e) => {
         e.preventDefault();
         alert('Form submitted (demo) — try styling :valid / :invalid in CSS!');
